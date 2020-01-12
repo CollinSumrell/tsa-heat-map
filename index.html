@@ -1,0 +1,292 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TSA Membership Heat Map</title>
+    <style>
+      #chartdiv {
+        width: 100%;
+        height: 500px;
+        font-family: Poppins;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chartdiv"></div>
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+    <script src="https://www.amcharts.com/lib/4/geodata/usaLow.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script>
+      am4core.ready(function() {
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+
+        // Create map instance
+        var chart = am4core.create("chartdiv", am4maps.MapChart);
+
+        // Set map definition
+        chart.geodata = am4geodata_usaLow;
+
+        // Set projection
+        chart.projection = new am4maps.projections.AlbersUsa();
+
+        // Create map polygon series
+        var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+
+        //Set min/max fill color for each area
+        polygonSeries.heatRules.push({
+          property: "fill",
+          target: polygonSeries.mapPolygons.template,
+          min: chart.colors.getIndex(1).brighten(5),
+          max: chart.colors.getIndex(1).brighten(-0.3)
+        });
+
+        // Make map load polygon data (state shapes and names) from GeoJSON
+        polygonSeries.useGeodata = true;
+
+        // Set heatmap values for each state
+        polygonSeries.data = [
+          {
+            id: "US-AL",
+            value: 5000
+          },
+          {
+            id: "US-AK",
+            value: 0
+          },
+          {
+            id: "US-AZ",
+            value: 0
+          },
+          {
+            id: "US-AR",
+            value: 0
+          },
+          {
+            id: "US-CA",
+            value: 0
+          },
+          {
+            id: "US-CO",
+            value: 0
+          },
+          {
+            id: "US-CT",
+            value: 0
+          },
+          {
+            id: "US-DE",
+            value: 0
+          },
+          {
+            id: "US-FL",
+            value: 50000
+          },
+          {
+            id: "US-GA",
+            value: 20000
+          },
+          {
+            id: "US-HI",
+            value: 0
+          },
+          {
+            id: "US-ID",
+            value: 0
+          },
+          {
+            id: "US-IL",
+            value: 0
+          },
+          {
+            id: "US-IN",
+            value: 0
+          },
+          {
+            id: "US-IA",
+            value: 0
+          },
+          {
+            id: "US-KS",
+            value: 0
+          },
+          {
+            id: "US-KY",
+            value: 0
+          },
+          {
+            id: "US-LA",
+            value: 0
+          },
+          {
+            id: "US-ME",
+            value: 0
+          },
+          {
+            id: "US-MD",
+            value: 0
+          },
+          {
+            id: "US-MA",
+            value: 0
+          },
+          {
+            id: "US-MI",
+            value: 0
+          },
+          {
+            id: "US-MN",
+            value: 0
+          },
+          {
+            id: "US-MS",
+            value: 0
+          },
+          {
+            id: "US-MO",
+            value: 2493
+          },
+          {
+            id: "US-MT",
+            value: 0
+          },
+          {
+            id: "US-NE",
+            value: 0
+          },
+          {
+            id: "US-NV",
+            value: 0
+          },
+          {
+            id: "US-NH",
+            value: 0
+          },
+          {
+            id: "US-NJ",
+            value: 13957
+          },
+          {
+            id: "US-NM",
+            value: 0
+          },
+          {
+            id: "US-NY",
+            value: 0
+          },
+          {
+            id: "US-NC",
+            value: 8677
+          },
+          {
+            id: "US-ND",
+            value: 0
+          },
+          {
+            id: "US-OH",
+            value: 0
+          },
+          {
+            id: "US-OK",
+            value: 15772
+          },
+          {
+            id: "US-OR",
+            value: 0
+          },
+          {
+            id: "US-PA",
+            value: 18000
+          },
+          {
+            id: "US-RI",
+            value: 0
+          },
+          {
+            id: "US-SC",
+            value: 0
+          },
+          {
+            id: "US-SD",
+            value: 0
+          },
+          {
+            id: "US-TN",
+            value: 0
+          },
+          {
+            id: "US-TX",
+            value: 51000
+          },
+          {
+            id: "US-UT",
+            value: 0
+          },
+          {
+            id: "US-VT",
+            value: 12
+          },
+          {
+            id: "US-VA",
+            value: 0
+          },
+          {
+            id: "US-WA",
+            value: 0
+          },
+          {
+            id: "US-WV",
+            value: 0
+          },
+          {
+            id: "US-WI",
+            value: 0
+          },
+          {
+            id: "US-WY",
+            value: 0
+          }
+        ];
+
+        // Set up heat legend
+        let heatLegend = chart.createChild(am4maps.HeatLegend);
+        heatLegend.series = polygonSeries;
+        heatLegend.align = "right";
+        heatLegend.valign = "bottom";
+        heatLegend.width = am4core.percent(20);
+        heatLegend.marginRight = am4core.percent(4);
+        heatLegend.minValue = 0;
+        heatLegend.maxValue = 52000;
+
+        // Set up custom heat map legend labels using axis ranges
+        var minRange = heatLegend.valueAxis.axisRanges.create();
+        minRange.value = heatLegend.minValue;
+        minRange.label.text = "0";
+        var maxRange = heatLegend.valueAxis.axisRanges.create();
+        maxRange.value = heatLegend.maxValue;
+        maxRange.label.text = "52,000";
+
+        // Blank out internal heat legend value axis labels
+        heatLegend.valueAxis.renderer.labels.template.adapter.add(
+          "text",
+          function(labelText) {
+            return "";
+          }
+        );
+
+        // Configure series tooltip
+        var polygonTemplate = polygonSeries.mapPolygons.template;
+        polygonTemplate.tooltipText = "{name}: {value}";
+        polygonTemplate.nonScalingStroke = true;
+        polygonTemplate.strokeWidth = 0.5;
+
+        // Create hover state and set alternative fill color
+        var hs = polygonTemplate.states.create("hover");
+        hs.properties.fill = am4core.color("#edf2f7");
+      }); // end am4core.ready()
+    </script>
+  </body>
+</html>
