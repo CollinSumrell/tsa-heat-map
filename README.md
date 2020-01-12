@@ -1,1 +1,2 @@
-# tsa-heat-map
+# National TSA Heat Map
+Map made with Amcharts.
