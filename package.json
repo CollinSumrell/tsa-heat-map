@@ -1,0 +1,26 @@
+{
+  "name": "tsa-heat-map",
+  "version": "1.0.0",
+  "description": "Map made with Amcharts.",
+  "main": "index.js",
+  "scripts": {
+    "build": "postcss css/tailwind.css -o css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CollinSumrell/tsa-heat-map.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CollinSumrell/tsa-heat-map/issues"
+  },
+  "homepage": "https://github.com/CollinSumrell/tsa-heat-map#readme",
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^2.1.0",
+    "autoprefixer": "^9.7.5",
+    "postcss-cli": "^7.1.0",
+    "tailwindcss": "^1.2.0"
+  }
+}
