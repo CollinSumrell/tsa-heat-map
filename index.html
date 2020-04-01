@@ -6,7 +6,6 @@
     <link href="/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <title>State Conference Visualization</title>
-
     <style type="text/css">
       path:hover {
         fill-opacity: 0.8;
@@ -15,47 +14,47 @@
       .already-happened {
         fill: #cbd5e0;
         fill-opacity: 1;
-        stroke: #ffffff;
+        stroke: #f7fafc;
         stroke-opacity: 1;
         stroke-width: 0.5;
       }
       .canceled {
         fill: #e53e3e;
         fill-opacity: 1;
-        stroke: #ffffff;
+        stroke: #f7fafc;
         stroke-opacity: 1;
         stroke-width: 0.5;
       }
       .select-online {
         fill: #ed8936;
         fill-opacity: 1;
-        stroke: #ffffff;
+        stroke: #f7fafc;
         stroke-opacity: 1;
         stroke-width: 0.5;
       }
       .online {
         fill: #ecc94b;
         fill-opacity: 1;
-        stroke: #ffffff;
+        stroke: #f7fafc;
         stroke-opacity: 1;
         stroke-width: 0.5;
       }
       .postponed {
         fill: #9acd32;
         fill-opacity: 1;
-        stroke: #ffffff;
+        stroke: #f7fafc;
         stroke-opacity: 1;
         stroke-width: 0.5;
       }
       .as-planned {
         fill: #48bb78;
         fill-opacity: 1;
-        stroke: #ffffff;
+        stroke: #f7fafc;
         stroke-opacity: 1;
         stroke-width: 0.5;
       }
       .no-delegation {
-        fill: #ffffff;
+        fill: #f7fafc;
         fill-opacity: 1;
         stroke: #cbd5e0;
         stroke-opacity: 0;
@@ -64,16 +63,78 @@
       .tbd {
         fill: #cbd5e0;
         fill-opacity: 1;
-        stroke: #ffffff;
+        stroke: #f7fafc;
         stroke-opacity: 1;
         stroke-width: 0.5;
       }
+      @media (prefers-color-scheme: dark) {
+        path:hover {
+          fill-opacity: 0.8;
+          transition-duration: 200ms;
+        }
+        .already-happened {
+          fill: #4a5568;
+          fill-opacity: 1;
+          stroke: #1a202c;
+          stroke-opacity: 1;
+          stroke-width: 0.5;
+        }
+        .canceled {
+          fill: #c53030;
+          fill-opacity: 1;
+          stroke: #1a202c;
+          stroke-opacity: 1;
+          stroke-width: 0.5;
+        }
+        .select-online {
+          fill: #ed8936;
+          fill-opacity: 1;
+          stroke: #1a202c;
+          stroke-opacity: 1;
+          stroke-width: 0.5;
+        }
+        .online {
+          fill: #ecc94b;
+          fill-opacity: 1;
+          stroke: #1a202c;
+          stroke-opacity: 1;
+          stroke-width: 0.5;
+        }
+        .postponed {
+          fill: #9acd32;
+          fill-opacity: 1;
+          stroke: #1a202c;
+          stroke-opacity: 1;
+          stroke-width: 0.5;
+        }
+        .as-planned {
+          fill: #48bb78;
+          fill-opacity: 1;
+          stroke: #1a202c;
+          stroke-opacity: 1;
+          stroke-width: 0.5;
+        }
+        .no-delegation {
+          fill: #1a202c;
+          fill-opacity: 1;
+          stroke: #cbd5e0;
+          stroke-opacity: 0;
+          stroke-width: 0.5;
+        }
+        .tbd {
+          fill: #1a202c;
+          fill-opacity: 1;
+          stroke: #1a202c;
+          stroke-opacity: 1;
+          stroke-width: 0.5;
+        }
+      }
     </style>
   </head>
-  <body class="px-4 py-10 font-sans bg-white sm:px-8 md:px-0 md:py-0">
+  <body class="font-sans bg-gray-100 dark:bg-gray-900">
     <div class="min-h-screen md:grid grid-cols-12">
       <div
-        class="flex items-center justify-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-24 md:col-span-6 lg:col-span-8"
+        class="flex items-center justify-center px-8 pt-10 sm:px-12 md:px-16 md:pt-0 lg:px-20 xl:px-28 md:col-span-6 lg:col-span-8"
       >
         <svg
           class="w-full"
@@ -385,38 +446,44 @@
         </svg>
       </div>
       <div
-        class="mt-10 py-4 md:h-screen md:mt-0 md:pr-10 md:overflow-y-scroll md:col-span-6 lg:col-span-4"
+        class="mt-10 px-4 py-4 bg-white dark:bg-gray-800 sm:px-8 sm:py-6 md:h-screen md:mt-0 md:px-0 md:py-4 md:pl-6 md:pr-10 md:overflow-y-scroll md:col-span-6 lg:col-span-4"
       >
         <table class="w-full border-collapse table-auto text-left">
           <tbody class="align-baseline">
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-red-600 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-red-600 rounded-full dark:bg-red-700"
+                ></div>
               </td>
-              <td class="p-2 font-semibold text-gray-900 border-gray-300">
+              <td
+                class="p-2 font-semibold text-gray-900 border-gray-300 dark:text-white dark:border-gray-700"
+              >
                 Alabama
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Canceled
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-gray-400 rounded-full dark:bg-gray-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Arkansas
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Happened February 19, 2020 at the University of Arkansas, Little
                 Rock, AR
@@ -424,17 +491,19 @@
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-gray-400 rounded-full dark:bg-gray-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Colorado
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Happened February 20-22, 2020 at the Marriot Denver Tech Center,
                 CO
@@ -442,51 +511,55 @@
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-red-600 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-red-600 rounded-full dark:bg-red-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Connecticut
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Canceled
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
                 <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Delaware
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Canceled with select virtual events
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-gray-400 rounded-full dark:bg-gray-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Florida
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Happened February 26-29, 2020 at the Double Tree by Hilton,
                 Orlando, FL
@@ -494,34 +567,38 @@
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-gray-400 rounded-full dark:bg-gray-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Georgia
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Happened March 12-14, 2020 at the Classic Center, Athens, GA
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-gray-400 rounded-full dark:bg-gray-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Idaho
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Happened March 5-7, 2020 at the College of Southern Idaho, Twin
                 Falls, ID
@@ -529,34 +606,38 @@
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-red-600 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-red-600 rounded-full dark:bg-red-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Illinois
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Canceled
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-gray-400 rounded-full dark:bg-gray-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Indiana
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Happened February 28-29, 2020 at Purdue University, West
                 Lafayette, IN
@@ -564,34 +645,36 @@
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-gray-400 rounded-full dark:bg-gray-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Iowa
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 TBD
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
                 <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Kansas
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 State conference will be held in an online/digital format May
                 11-15
@@ -599,17 +682,17 @@
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
                 <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Kentucky
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Onsite canceled - possible transition to select online
                 submissions
@@ -617,68 +700,72 @@
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-gray-400 rounded-full dark:bg-gray-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Louisiana
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 TBD
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
                 <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Maryland
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Canceled - status of online submissions under evaluation
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-red-600 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-red-600 rounded-full dark:bg-red-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Mississippi
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Canceled
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
                 <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Missouri
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 State conference will be held in an online/digital format in
                 early May, or possibly sooner
@@ -686,24 +773,24 @@
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
                 <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Montana
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Onsite canceled - transition to online submissions
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
                 <div
                   class="w-2 h-2 rounded-full"
@@ -711,148 +798,158 @@
                 ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 New Hampshire
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Postponed to May 7-8, 2020 at the Water Valley Resort, NH
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
                 <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 New Jersey
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Onsite canceled - possible transition to online events
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
                 <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 New Mexico
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Onsite canceled - transition to select online submissions
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-gray-400 rounded-full dark:bg-gray-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 New York
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 TBD
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-red-600 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-red-600 rounded-full dark:bg-red-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 North Carolina
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Canceled
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-red-600 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-red-600 rounded-full dark:bg-red-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 North Dakota
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Canceled
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-red-600 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-red-600 rounded-full dark:bg-red-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Ohio
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Canceled
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-red-600 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-red-600 rounded-full dark:bg-red-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Oklahoma
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Canceled
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
                 <div class="w-2 h-2 bg-green-500 rounded-full"></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Oregon
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Happening as planned on April 25, 2020 at the BMCC Workforce
                 Training Center, Boardman, OR
@@ -860,143 +957,157 @@
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-red-600 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-red-600 rounded-full dark:bg-red-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Pennsylvania
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Canceled
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-red-600 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-red-600 rounded-full dark:bg-red-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Rhode Island
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Canceled
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-red-600 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-red-600 rounded-full dark:bg-red-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 South Carolina
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Canceled
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-red-600 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-red-600 rounded-full dark:bg-red-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Tennessee
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Canceled
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
                 <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Texas
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Onsite canceled - transition to select online submissions
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-gray-400 rounded-full dark:bg-gray-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Utah
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Recently happened online
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-red-600 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-red-600 rounded-full dark:bg-red-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Virginia
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Canceled
               </td>
             </tr>
             <tr>
               <td
-                class="p-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="p-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
-                <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                <div
+                  class="w-2 h-2 bg-gray-400 rounded-full dark:bg-gray-700"
+                ></div>
               </td>
               <td
-                class="p-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="p-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 Washington
               </td>
               <td
-                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-2 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Recently happened online
               </td>
             </tr>
             <tr>
               <td
-                class="pt-2 pb-6 pl-2 pr-2 text-xs text-purple-700 whitespace-no-wrap border-t border-gray-300"
+                class="pt-2 pb-6 pl-2 pr-2 text-xs whitespace-no-wrap border-t border-gray-300 dark:border-gray-700"
               >
                 <div
                   class="w-2 h-2 rounded-full"
@@ -1004,12 +1115,12 @@
                 ></div>
               </td>
               <td
-                class="pt-2 pb-6 pl-2 pr-2 font-semibold text-gray-900 border-t border-gray-300"
+                class="pt-2 pb-6 pl-2 pr-2 font-semibold text-gray-900 border-t border-gray-300 dark:text-white dark:border-gray-700"
               >
                 West Virginia
               </td>
               <td
-                class="pt-2 pb-6 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300"
+                class="pt-2 pb-6 pl-6 pr-2 text-sm text-gray-600 border-t border-gray-300 dark:text-gray-500 dark:border-gray-700"
               >
                 Tentatively postponed to May 7-10, 2020 at the Cedar Lakes
                 Conference Center, Ripley, WV

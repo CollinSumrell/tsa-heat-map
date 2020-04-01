@@ -339,6 +339,10 @@ svg {
   background-color: #fff;
 }
 
+.bg-gray-100 {
+  background-color: #f7fafc;
+}
+
 .bg-gray-400 {
   background-color: #cbd5e0;
 }
@@ -425,9 +429,9 @@ svg {
   padding-right: 1rem;
 }
 
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .pt-2 {
@@ -454,6 +458,10 @@ svg {
   padding-left: 1.5rem;
 }
 
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
 .table-auto {
   table-layout: auto;
 }
@@ -468,10 +476,6 @@ svg {
 
 .text-gray-900 {
   color: #1a202c;
-}
-
-.text-purple-700 {
-  color: #6b46c1;
 }
 
 .text-xs {
@@ -508,9 +512,19 @@ svg {
 
 @media (min-width: 640px) {
 
+  .sm\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
   .sm\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .sm\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 
@@ -532,19 +546,27 @@ svg {
     overflow-y: scroll;
   }
 
-  .md\:py-0 {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
   .md\:px-0 {
     padding-left: 0;
     padding-right: 0;
   }
 
-  .md\:px-12 {
-    padding-left: 3rem;
-    padding-right: 3rem;
+  .md\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .md\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .md\:pt-0 {
+    padding-top: 0;
+  }
+
+  .md\:pl-6 {
+    padding-left: 1.5rem;
   }
 
   .md\:pr-10 {
@@ -558,9 +580,9 @@ svg {
 
 @media (min-width: 1024px) {
 
-  .lg\:px-16 {
-    padding-left: 4rem;
-    padding-right: 4rem;
+  .lg\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 
   .lg\:col-span-4 {
@@ -572,10 +594,33 @@ svg {
   }
 }
 
-@media (min-width: 1280px) {
+@media (prefers-color-scheme: dark) {
 
-  .xl\:px-24 {
-    padding-left: 6rem;
-    padding-right: 6rem;
+  .dark\:bg-gray-700 {
+    background-color: #4a5568;
+  }
+
+  .dark\:bg-gray-800 {
+    background-color: #2d3748;
+  }
+
+  .dark\:bg-gray-900 {
+    background-color: #1a202c;
+  }
+
+  .dark\:bg-red-700 {
+    background-color: #c53030;
+  }
+
+  .dark\:border-gray-700 {
+    border-color: #4a5568;
+  }
+
+  .dark\:text-white {
+    color: #fff;
+  }
+
+  .dark\:text-gray-500 {
+    color: #a0aec0;
   }
 }
